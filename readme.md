@@ -35,8 +35,8 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -50,15 +50,13 @@
 
 A demo gift list project where you can add gift ideas for the people anniversaries or special occasions.
 
-I experimented with Firebase using React TS and Tailwindcss, I also was curious to try using Vite.
+I experimented with Firebase using React TS and Tailwindcss, I also was curious to try Vite.
 
 The project is deployed on a Netlify server.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 - [![React][react.js]][react-url]
 - [![TypeScript][typescript]][ts-url]

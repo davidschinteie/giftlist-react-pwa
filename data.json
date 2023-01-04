@@ -1,50 +1,58 @@
 {
-  "people": {
-    "0": {
-      "personId": "0",
-      "name": "Dany Test",
-      "giftDates": [
-        {
-          "giftDateId": "0",
-          "date": "23-03-2023",
-          "gifts": [
-            { "giftId": "0", "name": "gift idea #1", "active": true },
-            { "giftId": "1", "name": "gift idea #2", "active": true },
-            { "giftId": "2", "name": "gift idea #4", "active": false }
+  "users": {
+    "ZpywaFRLpbSG6gky8z6cx47KQgP2": {
+      "uid": "ZpywaFRLpbSG6gky8z6cx47KQgP2",
+      "name": "David Schinteie",
+      "authProvider": "google",
+      "email": "davidokapistudio@gmail.com",
+      "people": {
+        "0": {
+          "personId": "0",
+          "name": "Dany Test",
+          "giftDates": [
+            {
+              "giftDateId": "0",
+              "date": "23-03-2023",
+              "gifts": [
+                { "giftId": "0", "name": "gift idea #1", "active": true },
+                { "giftId": "1", "name": "gift idea #2", "active": true },
+                { "giftId": "2", "name": "gift idea #4", "active": false }
+              ]
+            },
+            {
+              "giftDateId": "1",
+              "date": "25-12-2023",
+              "gifts": [
+                { "giftId": "0", "name": "gift idea #1", "active": false },
+                { "giftId": "1", "name": "gift idea #2", "active": false }
+              ]
+            }
           ]
         },
-        {
-          "giftDateId": "1",
-          "date": "25-12-2023",
-          "gifts": [
-            { "giftId": "0", "name": "gift idea #1", "active": false },
-            { "giftId": "1", "name": "gift idea #2", "active": false }
+        "1": {
+          "personId": "1",
+          "name": "Jade Test",
+          "giftDates": [
+            {
+              "giftDateId": "0",
+              "date": "16-06-2023",
+              "gifts": [
+                { "giftId": "0", "name": "gift idea #1", "active": false },
+                { "giftId": "1", "name": "gift idea #2", "active": false },
+                { "giftId": "2", "name": "gift idea #4", "active": true }
+              ]
+            },
+            {
+              "giftDateId": "1",
+              "date": "25-12-2023",
+              "gifts": [
+                { "giftId": "0", "name": "gift idea #1", "active": false },
+                { "giftId": "1", "name": "gift idea #2", "active": false }
+              ]
+            }
           ]
         }
-      ]
-    },
-    "1": {
-      "personId": "1",
-      "name": "Jade Test",
-      "giftDates": [
-        {
-          "giftDateId": "0",
-          "date": "16-06-2023",
-          "gifts": [
-            { "giftId": "0", "name": "gift idea #1", "active": false },
-            { "giftId": "1", "name": "gift idea #2", "active": false },
-            { "giftId": "2", "name": "gift idea #4", "active": true }
-          ]
-        },
-        {
-          "giftDateId": "1",
-          "date": "25-12-2023",
-          "gifts": [
-            { "giftId": "0", "name": "gift idea #1", "active": false },
-            { "giftId": "1", "name": "gift idea #2", "active": false }
-          ]
-        }
-      ]
+      }
     }
   }
 }

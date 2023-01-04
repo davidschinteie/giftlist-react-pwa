@@ -76,11 +76,10 @@ To get a local copy up and running follow these steps.
 
 ### Prerequisites
 
-1. A firebase account
-2. npm
-   ```sh
-   npm install npm@latest -g
-   ```
+1. Node.js installed
+2. Code editor — I prefer Visual Studio Code
+3. Google account — we need this to use Firebase
+4. Basic knowledge of React
 
 ### Installation
 

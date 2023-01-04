@@ -126,9 +126,9 @@ const Person = ({ person, backToPeople, updatePerson }: PersonProps) => {
   };
 
   return (
-    <div className="bg-slate-200 grow px-4 sm:px-6 lg:px-4">
+    <div className="bg-slate-200 grow px-4 sm:px-6 lg:px-4 mt-20">
       <button
-        className="pt-6 inline-flex items-center"
+        className="text-slate-500 pt-6 inline-flex items-center"
         onClick={() => backToPeople()}
       >
         <svg className="w-4 h-4 mr-4" viewBox="0 0 384 512">
@@ -147,7 +147,9 @@ const Person = ({ person, backToPeople, updatePerson }: PersonProps) => {
           className="max-w-lg mx-auto mb-10 bg-white p-8 rounded-xl shadow shadow-slate-300"
         >
           <div className="flex flex-row justify-between items-center">
-            <h1 className="text-3xl font-medium">{giftDate.date}</h1>
+            <h1 className="text-gray-800 text-3xl font-medium">
+              {giftDate.date}
+            </h1>
             <button
               onClick={() => {
                 setCurrentGiftListId(giftDate.giftDateId);

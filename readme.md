@@ -46,7 +46,8 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://willowy-moxie-f6e35f.netlify.app/)
+[![GiftList Mobile Screen Shot][product-mobile-screenshot]](https://willowy-moxie-f6e35f.netlify.app/)
+[![GiftList Desktop Screen Shot][product-screenshot]](https://willowy-moxie-f6e35f.netlify.app/)
 
 A demo gift list project where you can add gift ideas for the people anniversaries or special occasions.
 
@@ -190,6 +191,7 @@ Useful resources that I find helpful and would like to give credit to. I've incl
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/david-schinteie-0804ab95/
 [product-screenshot]: src/assets/screenshot.png
+[product-mobile-screenshot]: src/assets/screenshot-mobile.png
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
 [vitejs.dev]: https://img.shields.io/badge/Vite-20232A?style=for-the-badge&logo=vite&logoColor=646CFF

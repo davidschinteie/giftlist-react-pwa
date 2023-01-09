@@ -15,6 +15,7 @@ function App() {
       <Router>
         <AuthContext.Provider value={{ user, setUser }}>
           <Routes>
+            <Route path="/sign-in" element={<SignInPage />} />
             <Route
               path="/"
               element={
@@ -24,7 +25,6 @@ function App() {
               }
             />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/signIn" element={<SignInPage />} />
           </Routes>
         </AuthContext.Provider>
       </Router>

@@ -8,7 +8,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div
-      className="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat mt-20"
+      className="flex grow w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat mt-20"
       style={{
         backgroundImage: `url(${background})`,
       }}

@@ -226,7 +226,7 @@ hover:bg-slate-600 focus:bg-blue-50 active:bg-blue-100"
               </button>
             </div>
             <div className="mt-8 flex justify-center text-sm text-black">
-              <Link to="/signIn">
+              <Link to="/sign-in">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   stroke="currentColor"

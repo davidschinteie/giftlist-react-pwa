@@ -67,7 +67,7 @@ const Header = () => {
             {!user && (
               <>
                 <Link
-                  to="/signIn"
+                  to="/sign-in"
                   className="w-full px-3 py-2 rounded text-gray-400 text-center font-bold lg:inline-flex lg:w-auto lg:items-center lg:justify-center hover:bg-gray-900 hover:text-white"
                 >
                   <span>Sign In</span>
@@ -96,7 +96,7 @@ const Header = () => {
           {!user && (
             <>
               <Link
-                to="/signin"
+                to="/sign-in"
                 className="w-full px-3 py-2 rounded text-gray-400 text-center font-bold lg:inline-flex lg:w-auto lg:items-center lg:justify-center hover:bg-gray-900 hover:text-white"
               >
                 <span>Sign In</span>

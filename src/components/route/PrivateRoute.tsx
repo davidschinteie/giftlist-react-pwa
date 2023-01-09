@@ -10,7 +10,7 @@ const PrivateRoute = ({ user, children }: PrivateRouteProps) => {
   if (!user) {
     return (
       <>
-        <Navigate to="/signin" replace />
+        <Navigate to="/sign-in" replace />
       </>
     );
   }

@@ -29,8 +29,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#eab308",
-  "background_color": "#eab308",
+  "theme_color": "#1F2937",
+  "background_color": "#1F2937",
   "display": "standalone",
   "scope": "/",
   "start_url": "https://willowy-moxie-f6e35f.netlify.app/"

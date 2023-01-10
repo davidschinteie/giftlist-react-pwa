@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -28,6 +29,22 @@ const dbRef = ref(getDatabase());
 // Google Auth function
 const googleProvider = new GoogleAuthProvider();
 // googleProvider.setCustomParameters({ prompt: "select_account" });
+
+if (import.meta.env.VITE_ENV !== "PRODUCTION") {
+  Object.assign(window, {
+    FIREBASE_APPCHECK_DEBUG_TOKEN: import.meta.env
+      .VITE_PUBLIC_APPCHECK_DEBUG_TOKEN,
+  });
+}
+
+// App Check (reCAPTCHA)
+const appCheck = initializeAppCheck(firebaseApp, {
+  provider: new ReCaptchaV3Provider(import.meta.env.VITE_PUBLIC_APPCHECK_KEY),
+
+  // Optional argument. If true, the SDK automatically refreshes App Check
+  // tokens as needed.
+  isTokenAutoRefreshEnabled: true,
+});
 
 const signInWithGoogle = async () => {
   let user = null;
@@ -103,4 +120,5 @@ export {
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
   logout,
+  appCheck,
 };

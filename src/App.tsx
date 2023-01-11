@@ -10,7 +10,10 @@ import RegisterPage from "./screens/Users/RegisterPage";
 import SignInPage from "./screens/Users/SignInPage";
 
 function App() {
-  const [user, setUser] = useState<UserType | null>(null);
+  const userFromSessionStorage = sessionStorage.getItem("user");
+  const [user, setUser] = useState<UserType | null>(
+    userFromSessionStorage ? JSON.parse(userFromSessionStorage) : null
+  );
 
   return (
     <div className="App">
@@ -21,7 +24,7 @@ function App() {
             <Route
               path="/"
               element={
-                <PrivateRoute user={user}>
+                <PrivateRoute>
                   <People />
                 </PrivateRoute>
               }

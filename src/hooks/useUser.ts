@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { useLocalStorage } from "./useLocalStorage";
+import { useSessionStorage } from "./useSessionStorage";
 
 export interface UserType {
   uid: string;
@@ -11,7 +11,7 @@ export interface UserType {
 
 export const useUser = () => {
   const { user, setUser } = useContext(AuthContext);
-  const { setItem } = useLocalStorage();
+  const { setItem } = useSessionStorage();
 
   const addUser = (user: UserType) => {
     setUser(user);

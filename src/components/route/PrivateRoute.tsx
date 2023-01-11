@@ -1,12 +1,14 @@
+import { useContext } from "react";
 import { Navigate } from "react-router-dom";
-import { UserType } from "../../hooks/useUser";
+import { AuthContext } from "../../context/AuthContext";
 
 interface PrivateRouteProps {
-  user: UserType | null;
   children: React.ReactNode;
 }
 
-const PrivateRoute = ({ user, children }: PrivateRouteProps) => {
+const PrivateRoute = ({ children }: PrivateRouteProps) => {
+  const { user } = useContext(AuthContext);
+
   if (!user) {
     return (
       <>

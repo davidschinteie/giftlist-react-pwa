@@ -25,6 +25,7 @@ const RegisterPage = () => {
   const [visiblePassword, setVisiblePassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
   const [visibleConfirmPassword, setVisibleConfirmPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState<errorType>({
     emailError: "Field Email is required",
     passwordError: "Field Password is required",
@@ -49,13 +50,21 @@ const RegisterPage = () => {
 
     if (validatePassword()) {
       try {
-        const user = await registerWithEmailAndPassword(name, email, password);
+        const user = await registerWithEmailAndPassword(
+          name,
+          email,
+          password,
+          rememberMe
+        );
         if (user !== null) {
-          login({
-            uid: user.uid ?? "",
-            name: user.displayName ?? "",
-            email: user.email ?? "",
-          });
+          login(
+            {
+              uid: user.uid ?? "",
+              name: user.displayName ?? "",
+              email: user.email ?? "",
+            },
+            rememberMe
+          );
         }
         navigate("/");
       } catch (err: any) {
@@ -257,6 +266,24 @@ const RegisterPage = () => {
                 </button>
               </div>
 
+              <div className="flex items-center relative mb-4 pl-3">
+                <input
+                  type="checkbox"
+                  id="rememberMe"
+                  value="rememberMe"
+                  className="appearance-none h-6 w-6 bg-gray-400 rounded-full checked:scale-150 checked:opacity-0 transition-all duration-300 peer"
+                  checked={rememberMe}
+                  onChange={() => setRememberMe(!rememberMe)}
+                />
+                <div className="h-6 w-6 absolute rounded-full transition-all duration-300 transparent pointer-events-none peer-checked:bg-lime-500"></div>
+                <label
+                  htmlFor="rememberMe"
+                  className="flex flex-col justify-center px-3 peer-checked:text-lime-500 select-none font-medium"
+                >
+                  Remember Me
+                </label>
+              </div>
+
               {!emptyErrors && (
                 <div className="flex items-center mb-4 text-lg">
                   <p className="text-sm text-red-300 font-medium">
@@ -281,7 +308,7 @@ const RegisterPage = () => {
 
             <div className="mt-8 flex justify-center text-lg text-black">
               <button
-                onClick={signInWithGoogle}
+                onClick={() => signInWithGoogle(rememberMe)}
                 className="group h-12 px-6 rounded-3xl bg-white text-slate-800 shadow-xl backdrop-blur-md transition-colors duration-300
 hover:bg-slate-600 focus:bg-blue-50 active:bg-blue-100"
               >

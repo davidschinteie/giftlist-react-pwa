@@ -10,9 +10,10 @@ import RegisterPage from "./screens/Users/RegisterPage";
 import SignInPage from "./screens/Users/SignInPage";
 
 function App() {
-  const userFromSessionStorage = sessionStorage.getItem("user");
+  const userFromStorage =
+    sessionStorage.getItem("user") ?? localStorage.getItem("user");
   const [user, setUser] = useState<UserType | null>(
-    userFromSessionStorage ? JSON.parse(userFromSessionStorage) : null
+    userFromStorage ? JSON.parse(userFromStorage) : null
   );
 
   return (

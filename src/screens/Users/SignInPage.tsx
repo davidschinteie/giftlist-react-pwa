@@ -14,30 +14,37 @@ const SignInPage = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
   const [visiblePassword, setVisiblePassword] = useState(false);
 
   const signIn = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(event.target);
-    const user = await logInWithEmailAndPassword(email, password);
+    const user = await logInWithEmailAndPassword(email, password, rememberMe);
     if (user !== null) {
-      login({
-        uid: user.uid ?? "",
-        name: user.displayName ?? "",
-        email: user.email ?? "",
-      });
+      login(
+        {
+          uid: user.uid ?? "",
+          name: user.displayName ?? "",
+          email: user.email ?? "",
+        },
+        rememberMe
+      );
       navigate("/");
     }
   };
 
   const handleSignInWithGoogle = async () => {
-    const user = await signInWithGoogle();
+    const user = await signInWithGoogle(rememberMe);
     if (user !== null) {
-      login({
-        uid: user.uid ?? "",
-        name: user.displayName ?? "",
-        email: user.email ?? "",
-      });
+      login(
+        {
+          uid: user.uid ?? "",
+          name: user.displayName ?? "",
+          email: user.email ?? "",
+        },
+        rememberMe
+      );
       navigate("/");
     }
   };
@@ -118,6 +125,24 @@ const SignInPage = () => {
                     ></path>
                   </svg>
                 </button>
+              </div>
+
+              <div className="flex items-center relative mb-4 pl-3">
+                <input
+                  type="checkbox"
+                  id="rememberMe"
+                  value="rememberMe"
+                  className="appearance-none h-6 w-6 bg-gray-400 rounded-full checked:scale-150 checked:opacity-0 transition-all duration-300 peer"
+                  checked={rememberMe}
+                  onChange={() => setRememberMe(!rememberMe)}
+                />
+                <div className="h-6 w-6 absolute rounded-full transition-all duration-300 transparent pointer-events-none peer-checked:bg-lime-500"></div>
+                <label
+                  htmlFor="rememberMe"
+                  className="flex flex-col justify-center px-3 peer-checked:text-lime-500 select-none"
+                >
+                  Remember Me
+                </label>
               </div>
 
               <div className="mt-8 flex justify-center text-lg text-black">

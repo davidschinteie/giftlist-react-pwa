@@ -2,10 +2,16 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { useAuth } from "../../hooks/useAuth";
+import { logoutFirebase } from "../../utils/firebase";
 
 const Header = () => {
   const { user } = useContext(AuthContext);
   const { logout } = useAuth();
+
+  const handleLogOut = () => {
+    logoutFirebase();
+    logout();
+  };
 
   const [toggleVisible, setToggleVisible] = useState(false);
   return (
@@ -58,7 +64,7 @@ const Header = () => {
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
             {user && (
               <button
-                onClick={logout}
+                onClick={handleLogOut}
                 className="w-full px-3 py-2 rounded text-gray-400 text-center font-bold lg:inline-flex lg:w-auto lg:items-center lg:justify-center hover:bg-gray-900 hover:text-white"
               >
                 Logout
@@ -87,7 +93,7 @@ const Header = () => {
         <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
           {user && (
             <button
-              onClick={logout}
+              onClick={handleLogOut}
               className="w-full px-3 py-2 rounded text-gray-400 text-center font-bold lg:inline-flex lg:w-auto lg:items-center lg:justify-center hover:bg-gray-900 hover:text-white"
             >
               Logout

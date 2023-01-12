@@ -1,9 +1,12 @@
 import { initializeApp } from "firebase/app";
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 import {
+  browserLocalPersistence,
+  browserSessionPersistence,
   createUserWithEmailAndPassword,
   getAuth,
   GoogleAuthProvider,
+  setPersistence,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -46,8 +49,12 @@ const appCheck = initializeAppCheck(firebaseApp, {
   isTokenAutoRefreshEnabled: true,
 });
 
-const signInWithGoogle = async () => {
+const signInWithGoogle = async (rememberMe: boolean) => {
   let user = null;
+  setPersistence(
+    auth,
+    rememberMe ? browserLocalPersistence : browserSessionPersistence
+  );
   try {
     const res = await signInWithPopup(auth, googleProvider);
     user = res.user;
@@ -73,8 +80,16 @@ const signInWithGoogle = async () => {
   return user;
 };
 
-const logInWithEmailAndPassword = async (email: string, password: string) => {
+const logInWithEmailAndPassword = async (
+  email: string,
+  password: string,
+  rememberMe: boolean
+) => {
   let user = null;
+  setPersistence(
+    auth,
+    rememberMe ? browserLocalPersistence : browserSessionPersistence
+  );
   try {
     const res = await signInWithEmailAndPassword(auth, email, password);
     user = res.user;
@@ -89,9 +104,14 @@ const logInWithEmailAndPassword = async (email: string, password: string) => {
 const registerWithEmailAndPassword = async (
   name: string,
   email: string,
-  password: string
+  password: string,
+  rememberMe: boolean
 ) => {
   let user = null;
+  setPersistence(
+    auth,
+    rememberMe ? browserLocalPersistence : browserSessionPersistence
+  );
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     user = res.user;
@@ -108,7 +128,7 @@ const registerWithEmailAndPassword = async (
   return user;
 };
 
-const logout = () => {
+const logoutFirebase = () => {
   signOut(auth);
 };
 
@@ -119,6 +139,6 @@ export {
   signInWithGoogle,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
-  logout,
+  logoutFirebase,
   appCheck,
 };

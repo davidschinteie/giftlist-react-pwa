@@ -162,9 +162,9 @@ Don't forget to give the project a star! Thanks again!
 
 ## Contact
 
-[David Schinteie](https://twitter.com/your_username)
+[David Schinteie](https://www.linkedin.com/in/david-schinteie-0804ab95/)
 
-Project Link: [https://github.com/davidschinteie/giftlist](https://www.linkedin.com/in/david-schinteie-0804ab95/)
+Project Link: [https://github.com/davidschinteie/giftlist](https://github.com/davidschinteie/giftlist)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

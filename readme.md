@@ -7,10 +7,8 @@
   <p align="center">
     A React TS project with Firebase Realtime Database
     <br />
-    <a href="https://github.com/davidschinteie/giftlist"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://willowy-moxie-f6e35f.netlify.app/">View Demo</a>
+    <a href="https://giftlist-pwa.netlify.app/">View Demo</a>
     ·
     <a href="https://github.com/davidschinteie/giftlist/issues">Report Bug</a>
     ·
@@ -46,14 +44,14 @@
 
 ## About The Project
 
-[![GiftList Mobile Screen Shot][product-mobile-screenshot]](https://willowy-moxie-f6e35f.netlify.app/)
-[![GiftList Desktop Screen Shot][product-screenshot]](https://willowy-moxie-f6e35f.netlify.app/)
-
 A demo gift list project where you can add gift ideas for the people anniversaries or special occasions.
 
 I experimented with Firebase using React TS and Tailwindcss, I also was curious to try Vite.
 
 The project is deployed on a Netlify server.
+
+[![GiftList Mobile Screen Shot][product-mobile-screenshot]](https://giftlist-pwa.netlify.app/)
+[![GiftList Desktop Screen Shot][product-screenshot]](https://giftlist-pwa.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -132,7 +130,7 @@ To get a local copy up and running follow these steps.
 - [x] Fetch data using onValue method
 - [x] Implement Edit & Remove & Add features for persons / gifts lists / gift items
 - [x] Deploy on Netlify
-- [ ] Add authentication using firebase auth
+- [x] Add authentication using firebase auth
 - [ ] Enhance features
   - [ ] Add photos to people list using firebase file uploads
   - [ ] Add a datepicker to use dates on giftlists

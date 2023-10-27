@@ -44,7 +44,7 @@
 
 ## About The Project
 
-A demo gift list project where you can add gift ideas for the people anniversaries or special occasions.
+The app allows you to organize and save gift ideas, all neatly categorized by the recipients and the special occasions they're meant for. Never forget a birthday, anniversary, or holiday again, and always find the right gift at the right time.
 
 I experimented with Firebase using React TS and Tailwindcss, I also was curious to try Vite.
 
